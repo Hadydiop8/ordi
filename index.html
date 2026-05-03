@@ -1,0 +1,140 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choisis Ton Ordi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">💻 CHOISIS TON ORDI</div>
+
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Nos ordinateurs</a>
+        <a href="#">À propos</a>
+        <a href="#">Comment ça marche</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <button class="login-btn">Se connecter</button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+    <!-- LEFT -->
+    <div class="hero-left">
+    <span class="badge">LE MEILLEUR CHOIX POUR LES ÉTUDIANTS</span>
+
+    <h1>
+        CHOISIS <br>
+        <span>TON ORDI</span>
+    </h1>
+
+    <p>
+        Un étudiant, un ordinateur <br>
+        Nous t’aidons à trouver l’ordinateur idéal.
+    </p>
+
+    <div class="stats">
+        <div>500+ Étudiants satisfaits</div>
+        <div>100+ Ordinateurs disponibles</div>
+    </div>
+</div>
+
+<!-- IMAGE -->
+<div class="hero-image">
+    <img src="images/student.png" alt="Étudiant avec ordinateur">
+</div>
+
+    <!-- RIGHT FORM -->
+    <div class="form-box">
+        <h2>Crée ton compte</h2>
+        <p>Commence ton aventure avec nous</p>
+
+        <form>
+            <input type="text" placeholder="Prénom" required>
+            <input type="text" placeholder="Nom" required>
+            <input type="tel" placeholder="Numéro de téléphone" required>
+            <input type="email" placeholder="Email (optionnel)">
+
+            <button type="submit">S'inscrire et continuer →</button>
+        </form>
+    </div>
+
+</section>
+
+<!-- SECTION POURQUOI -->
+<section class="why">
+    <h2>Pourquoi choisir <span>Choisis Ton Ordi</span> ?</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Ordinateurs sélectionnés</h3>
+            <p>Testés pour garantir performance et fiabilité.</p>
+        </div>
+
+        <div class="card">
+            <h3>Garantie incluse</h3>
+            <p>Tous nos produits sont garantis.</p>
+        </div>
+
+        <div class="card">
+            <h3>Livraison rapide</h3>
+            <p>Partout au Sénégal.</p>
+        </div>
+
+        <div class="card">
+            <h3>Paiement sécurisé</h3>
+            <p>Transactions fiables.</p>
+        </div>
+    </div>
+</section>
+
+<!-- MESSAGE DE SUCCÈS -->
+<div id="success-message" class="success-message">
+    <div class="success-content">
+        <div class="success-icon">✅</div>
+        <h3>Inscription réussie !</h3>
+        <p>Redirection vers le choix de ton ordinateur...</p>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelector("form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const prenom = document.querySelector('input[placeholder="Prénom"]').value.trim();
+    const nom = document.querySelector('input[placeholder="Nom"]').value.trim();
+    const tel = document.querySelector('input[placeholder="Numéro de téléphone"]').value.trim();
+    const email = document.querySelector('input[placeholder="Email (optionnel)"]').value.trim();
+
+    localStorage.setItem("prenom", prenom);
+    localStorage.setItem("nom", nom);
+    localStorage.setItem("tel", tel);
+    localStorage.setItem("email", email);
+
+    // Afficher le message de succès
+    const successMessage = document.getElementById('success-message');
+    successMessage.style.display = 'flex';
+
+    // Animation de la barre de progression
+    setTimeout(() => {
+        document.querySelector('.loading-progress').style.width = '100%';
+    }, 100);
+
+    setTimeout(()=>{
+        window.location.href = "choix_ordi.html";
+    }, 2000);
+});
+</script>
+
+</body>
+</html>

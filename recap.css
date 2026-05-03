@@ -1,0 +1,511 @@
+:root {
+  --bg: #eef3fb;
+  --surface: #ffffff;
+  --surface-strong: #f7f9ff;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --primary: #2f5dff;
+  --success: #22c55e;
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow: 0 35px 80px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, rgba(45, 125, 255, 0.15), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.1), transparent 22%),
+    var(--bg);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.navbar {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 20px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.brand-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: rgba(79, 70, 229, 0.18);
+  color: white;
+}
+
+.brand strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.brand span {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: white;
+  border-radius: 999px;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+}
+
+.progress-section {
+  padding: 24px 0 0;
+}
+
+.progress-section .container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.step-marker {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 700;
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--primary);
+}
+
+.progress-step.done .step-marker {
+  background: var(--success);
+  color: white;
+}
+
+.progress-step.active {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.progress-step strong {
+  display: block;
+  font-size: 0.98rem;
+}
+
+.progress-step p {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.page-main {
+  padding: 40px 0 60px;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.page-title h1 {
+  font-size: clamp(2.1rem, 2.5vw, 3rem);
+  margin-bottom: 0.6rem;
+}
+
+.page-title p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.page-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) 420px;
+  gap: 24px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--primary);
+}
+
+.card-icon-green {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--success);
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card-header p {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.info-grid div {
+  display: grid;
+  gap: 8px;
+}
+
+.info-grid span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.info-grid strong {
+  font-size: 1rem;
+}
+
+.product-details {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.product-image {
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f8fbff;
+}
+
+.product-image img {
+  width: 100%;
+  display: block;
+}
+
+.product-info h3 {
+  margin: 0 0 16px;
+  font-size: 1.35rem;
+}
+
+.product-meta {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.product-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+
+.product-price span {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.product-price strong {
+  font-size: 1.7rem;
+  color: #16a34a;
+}
+
+.footer-note {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+}
+
+.note-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 18px;
+  background: rgba(16, 185, 129, 0.12);
+  display: grid;
+  place-items: center;
+  color: var(--success);
+}
+
+.footer-note strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.whatsapp-card {
+  background: #f8fffb;
+}
+
+.whatsapp-header {
+  gap: 14px;
+}
+
+.whatsapp-icon {
+  color: #16a34a;
+  background: rgba(22, 163, 74, 0.12);
+}
+
+.preview-box {
+  background: white;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  padding: 20px;
+  margin-bottom: 22px;
+}
+
+.preview-box span {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.preview {
+  white-space: pre-line;
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 0.96rem;
+}
+
+.whatsapp-btn,
+.back-btn {
+  width: 100%;
+  border: none;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #16a34a;
+  color: white;
+}
+
+.back-btn {
+  margin-top: 16px;
+  background: white;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 980px) {
+  .page-content {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: min(100%, calc(100% - 30px));
+  }
+}
+
+@media (max-width: 720px) {
+  .navbar-inner,
+  .progress-section .container,
+  .product-details {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-section .container {
+    display: grid;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .page-title h1 {
+    font-size: 2rem;
+  }
+
+  .info-grid,
+  .product-details {
+    grid-template-columns: 1fr;
+  }
+
+  .product-price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-inner {
+    padding: 15px 0;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .progress-section .container {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .progress-step {
+    padding: 12px 15px;
+  }
+
+  .step-marker {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .page-main {
+    padding: 30px 0 40px;
+  }
+
+  .page-title {
+    margin-bottom: 24px;
+  }
+
+  .page-title h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card-header {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .info-grid {
+    gap: 12px;
+  }
+
+  .product-details {
+    gap: 18px;
+  }
+
+  .product-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-note {
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .note-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .preview-box {
+    padding: 16px;
+  }
+
+  .whatsapp-btn,
+  .back-btn {
+    padding: 14px;
+    font-size: 0.95rem;
+  }
+}

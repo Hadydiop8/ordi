@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Récapitulatif</title>
+  <link rel="stylesheet" href="recap.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">
+        <span class="brand-icon"><i class="fas fa-laptop"></i></span>
+        <div>
+          <strong>CHOISIS TON ORDI</strong>
+          <span>Un étudiant, un ordinateur</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#">Accueil</a>
+        <a href="#">Nos ordinateurs</a>
+        <a href="#">À propos</a>
+        <a href="#">Comment ça marche</a>
+        <a href="#">Contact</a>
+      </nav>
+      <button class="profile-btn">
+        <span>DiopTechPro</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+  </header>
+
+  <section class="progress-section">
+    <div class="container">
+      <div class="progress-step done">
+        <div class="step-marker"><i class="fas fa-check"></i></div>
+        <div>
+          <strong>1. Inscription</strong>
+          <p>Informations personnelles</p>
+        </div>
+      </div>
+      <div class="progress-step done">
+        <div class="step-marker"><i class="fas fa-check"></i></div>
+        <div>
+          <strong>2. Choix de l'ordinateur</strong>
+          <p>Sélection de votre produit</p>
+        </div>
+      </div>
+      <div class="progress-step active">
+        <div class="step-marker">3</div>
+        <div>
+          <strong>3. Récapitulatif</strong>
+          <p>Confirmation et envoi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-main">
+    <div class="container">
+      <section class="page-title">
+        <h1>Récapitulatif de votre choix</h1>
+        <p>Vérifiez vos informations et envoyez-nous votre demande sur WhatsApp</p>
+      </section>
+
+      <div class="page-content">
+        <div class="left-panel">
+          <section class="card info-card">
+            <div class="card-header">
+              <div class="card-icon"><i class="fas fa-user"></i></div>
+              <div>
+                <h2>Vos informations</h2>
+                <p>Vérifiez vos données personnelles</p>
+              </div>
+            </div>
+
+            <div class="info-grid">
+              <div>
+                <span>Prénom</span>
+                <strong id="prenom"></strong>
+              </div>
+              <div>
+                <span>Nom</span>
+                <strong id="nom"></strong>
+              </div>
+              <div>
+                <span>Téléphone</span>
+                <strong id="tel"></strong>
+              </div>
+              <div>
+                <span>Email</span>
+                <strong id="email"></strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="card product-card">
+            <div class="card-header">
+              <div class="card-icon card-icon-green"><i class="fas fa-desktop"></i></div>
+              <div>
+                <h2>Ordinateur choisi</h2>
+                <p>Détails du modèle sélectionné</p>
+              </div>
+            </div>
+
+            <div class="product-details">
+              <div class="product-image">
+                <img id="ordi-image" src="https://via.placeholder.com/320x220" alt="Ordinateur sélectionné" />
+              </div>
+              <div class="product-info">
+                <h3 id="ordi"></h3>
+                <div class="product-meta">
+                  <span><i class="fas fa-microchip"></i> 8 GB RAM</span>
+                  <span><i class="fas fa-hdd"></i> 256 GB SSD</span>
+                  <span><i class="fas fa-rocket"></i> Core i5</span>
+                </div>
+                <div class="product-price">
+                  <span>Prix</span>
+                  <strong id="prix"></strong>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card footer-note">
+            <div class="note-icon"><i class="fas fa-shield-alt"></i></div>
+            <div>
+              <strong>Garantie incluse</strong>
+              <p>Tous nos ordinateurs sont testés et garantis pour votre tranquillité.</p>
+            </div>
+          </section>
+        </div>
+
+        <aside class="right-panel">
+          <section class="card whatsapp-card">
+            <div class="card-header whatsapp-header">
+              <div class="card-icon whatsapp-icon"><i class="fab fa-whatsapp"></i></div>
+              <div>
+                <h2>Envoyer ma demande sur WhatsApp</h2>
+                <p>Cliquez sur le bouton ci-dessous pour envoyer votre demande directement sur WhatsApp.</p>
+              </div>
+            </div>
+
+            <div class="preview-box">
+              <span>Aperçu du message</span>
+              <div class="preview" id="preview"></div>
+            </div>
+
+            <button class="whatsapp-btn" onclick="envoyerWhatsApp()">
+              <i class="fab fa-whatsapp"></i>
+              Envoyer sur WhatsApp
+            </button>
+          </section>
+
+          <button class="back-btn" onclick="window.history.back()">← Retour aux ordinateurs</button>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script>
+  // RECUPERATION INFOS
+  const prenom = localStorage.getItem("prenom");
+  const nom = localStorage.getItem("nom");
+  const tel = localStorage.getItem("tel");
+  const email = localStorage.getItem("email");
+
+  const ordi = localStorage.getItem("ordi_nom") || "Aucun ordinateur sélectionné";
+  const prix = localStorage.getItem("ordi_prix") || "0";
+  const image = localStorage.getItem("ordi_image") || "https://via.placeholder.com/320x220";
+
+  document.getElementById("prenom").innerText = prenom || "-";
+  document.getElementById("nom").innerText = nom || "-";
+  document.getElementById("tel").innerText = tel || "-";
+  document.getElementById("email").innerText = email || "-";
+
+  document.getElementById("ordi").innerText = ordi;
+  document.getElementById("prix").innerText = prix !== "0" ? prix + " FCFA" : "Prix non défini";
+  document.getElementById("ordi-image").src = image;
+
+  const message = `Bonjour, je suis intéressé par cet ordinateur :\n\n👤 Informations :\nNom : ${prenom || "-"} ${nom || "-"}\nTéléphone : ${tel || "-"}\nEmail : ${email || "-"}\n\n💻 Ordinateur choisi :\n${ordi}\nPrix : ${prix !== "0" ? prix + " FCFA" : "N/A"}`;
+
+  document.getElementById("preview").innerText = message;
+
+  function envoyerWhatsApp(){
+      const numero = "221781086160";
+      const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(message);
+      window.open(url, "_blank");
+  }
+  </script>
+</body>
+</html>

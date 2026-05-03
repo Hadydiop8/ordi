@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choisir ton ordinateur</title>
+<link rel="stylesheet" href="choix.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">💻 CHOISIS TON ORDI</div>
+
+    <nav>
+        <a href="#">Accueil</a>
+        <a class="active" href="#">Nos ordinateurs</a>
+        <a href="#">À propos</a>
+        <a href="#">Comment ça marche</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="user">👤 DiopTechPro</div>
+</header>
+
+<!-- HERO TOP -->
+<section class="hero-top">
+    <div>
+        <h1>Choisis ton ordinateur</h1>
+        <p>Sélectionne l’ordinateur qui correspond à tes besoins</p>
+    </div>
+
+    <div class="badge">
+        ✔ Garantie incluse
+        <span>Tous nos ordinateurs sont testés</span>
+    </div>
+</section>
+
+<!-- CONTENT -->
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h3>Filtrer les ordinateurs</h3>
+
+        <div class="filter-group">
+            <p>Marque</p>
+            <label><input type="checkbox" id="hp-filter" value="HP"> HP</label>
+            <label><input type="checkbox" id="dell-filter" value="Dell"> Dell</label>
+            <label><input type="checkbox" id="lenovo-filter" value="Lenovo"> Lenovo</label>
+            <label><input type="checkbox" id="asus-filter" value="Asus"> Asus</label>
+        </div>
+
+        <div class="filter-group">
+            <p>RAM</p>
+            <label><input type="checkbox" id="ram-4gb" value="4"> 4 GB</label>
+            <label><input type="checkbox" id="ram-8gb" value="8"> 8 GB</label>
+            <label><input type="checkbox" id="ram-16gb" value="16"> 16 GB</label>
+        </div>
+
+        <div class="filter-group">
+            <p>Prix</p>
+            <label for="prix-range">Sélectionner le prix maximum</label>
+            <input type="range" id="prix-range" min="90000" max="350000" value="350000" step="10000">
+            <span id="prix-value">350 000 FCFA</span>
+        </div>
+    </aside>
+
+    <!-- PRODUITS -->
+    <main class="products">
+        <div class="card hp" data-prix="150000" data-ram="8">
+            <img src="images/hp.jpg" alt="HP EliteBook 840">
+            <h3>HP EliteBook 840</h3>
+            <p>8GB RAM • 256GB SSD • Core i5</p>
+            <span>150 000 FCFA</span>
+            <button onclick="choisir(this,'HP EliteBook',150000)">Choisir cet ordi</button>
+        </div>
+
+        <div class="card dell" data-prix="140000" data-ram="8">
+            <img src="images/dell.jpg" alt="Dell Latitude 5400">
+            <h3>Dell Latitude 5400</h3>
+            <p>8GB RAM • 256GB SSD • Core i5</p>
+            <span>140 000 FCFA</span>
+            <button onclick="choisir(this,'Dell Latitude',140000)">Choisir cet ordi</button>
+        </div>
+
+        <div class="card lenovo" data-prix="180000" data-ram="16">
+            <img src="images/lenovo.jpg" alt="Lenovo ThinkPad T480">
+            <h3>Lenovo ThinkPad T480</h3>
+            <p>16GB RAM • 512GB SSD • Core i7</p>
+            <span>180 000 FCFA</span>
+            <button onclick="choisir(this,'Lenovo ThinkPad',180000)">Choisir cet ordi</button>
+        </div>
+
+        <div class="card hp" data-prix="130000" data-ram="8">
+            <img src="images/hp2.jpg" alt="HP ProBook 450">
+            <h3>HP ProBook 450</h3>
+            <p>8GB RAM • 256GB SSD • Core i5</p>
+            <span>130 000 FCFA</span>
+            <button onclick="choisir(this,'HP ProBook',130000)">Choisir cet ordi</button>
+        </div>
+
+         <div class="card hp" data-prix="150000" data-ram="8">
+            <img src="images/hp.jpg" alt="HP EliteBook 840">
+            <h3>HP EliteBook 840</h3>
+            <p>8GB RAM • 256GB SSD • Core i5</p>
+            <span>150 000 FCFA</span>
+            <button onclick="choisir(this,'HP EliteBook',150000)">Choisir cet ordi</button>
+        </div>
+
+        <div class="card dell" data-prix="140000" data-ram="8">
+            <img src="images/dell.jpg" alt="Dell Latitude 5400">
+            <h3>Dell Latitude 5400</h3>
+            <p>8GB RAM • 256GB SSD • Core i5</p>
+            <span>140 000 FCFA</span>
+            <button onclick="choisir(this,'Dell Latitude',140000)">Choisir cet ordi</button>
+        </div>
+
+        <div class="card lenovo" data-prix="180000" data-ram="16">
+            <img src="images/lenovo.jpg" alt="Lenovo ThinkPad T480">
+            <h3>Lenovo ThinkPad T480</h3>
+            <p>16GB RAM • 512GB SSD • Core i7</p>
+            <span>180 000 FCFA</span>
+            <button onclick="choisir(this,'Lenovo ThinkPad',180000)">Choisir cet ordi</button>
+        </div>
+
+        <div class="card hp" data-prix="130000" data-ram="8">
+            <img src="images/hp2.jpg" alt="HP ProBook 450">
+            <h3>HP ProBook 450</h3>
+            <p>8GB RAM • 256GB SSD • Core i5</p>
+            <span>130 000 FCFA</span>
+            <button onclick="choisir(this,'HP ProBook',130000)">Choisir cet ordi</button>
+        </div>
+
+         <div class="card hp" data-prix="130000" data-ram="8">
+            <img src="images/hp2.jpg" alt="HP ProBook 450">
+            <h3>HP ProBook 450</h3>
+            <p>8GB RAM • 256GB SSD • Core i5</p>
+            <span>130 000 FCFA</span>
+            <button onclick="choisir(this,'HP ProBook',130000)">Choisir cet ordi</button>
+        </div>
+
+
+    </main>
+
+</div>
+
+<!-- MESSAGE DE SUCCÈS -->
+<div id="success-message" class="success-message">
+    <div class="success-content">
+        <div class="success-icon">✅</div>
+        <h3>Ordinateur sélectionné !</h3>
+        <p>Préparation de ton récapitulatif...</p>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+function choisir(button, nom, prix){
+    const card = button.closest('.card');
+    const image = card.querySelector('img').src;
+
+    localStorage.setItem("ordi_nom", nom);
+    localStorage.setItem("ordi_prix", prix);
+    localStorage.setItem("ordi_image", image);
+
+    // Afficher le message de succès
+    const successMessage = document.getElementById('success-message');
+    successMessage.style.display = 'flex';
+
+    // Animation de la barre de progression
+    setTimeout(() => {
+        document.querySelector('.loading-progress').style.width = '100%';
+    }, 100);
+
+    setTimeout(() => {
+        window.location.href = "recap.html";
+    }, 2000);
+}
+
+// Filtrage des produits
+function filtrerProduits() {
+    const marquesSelectionnees = [];
+    const ramSelectionnee = [];
+    
+    // Marques sélectionnées
+    document.querySelectorAll('.filter-group input[type="checkbox"]:checked').forEach(cb => {
+        if (cb.id.includes('ram-')) {
+            ramSelectionnee.push(cb.value);
+        } else if (cb.id !== 'asus-filter') { // Asus n'a pas de produits
+            marquesSelectionnees.push(cb.value.toLowerCase());
+        }
+    });
+
+    const prixMax = parseInt(document.getElementById('prix-range').value);
+    const cartes = document.querySelectorAll('.products .card');
+
+    cartes.forEach(card => {
+        const marque = card.classList[1]; // hp, dell, lenovo
+        const prix = parseInt(card.dataset.prix);
+        const ram = card.dataset.ram;
+        
+        const afficherMarque = marquesSelectionnees.length === 0 || marquesSelectionnees.includes(marque);
+        const afficherPrix = prix <= prixMax;
+        const afficherRam = ramSelectionnee.length === 0 || ramSelectionnee.includes(ram);
+
+        if (afficherMarque && afficherPrix && afficherRam) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Écouteurs d'événements
+document.addEventListener('DOMContentLoaded', function() {
+    // Checkboxes marques
+    document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', filtrerProduits);
+    });
+
+    // Range prix
+    const prixRange = document.getElementById('prix-range');
+    const prixValue = document.getElementById('prix-value');
+    
+    prixRange.addEventListener('input', function() {
+        const valeur = parseInt(this.value);
+        prixValue.textContent = valeur.toLocaleString('fr-FR') + ' FCFA';
+        filtrerProduits();
+    });
+});
+</script>
+
+</body>
+</html>
